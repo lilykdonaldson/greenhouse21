@@ -22,7 +22,7 @@ function draw() {
 	stroke(0);
 	textAlign(CENTER);
 	textSize(15);
-	console.log(mouseX,mouseY);
+	//console.log(mouseX,mouseY);
 	//Grow Lights Hit Point
 	ellipse(342,227,20,20);
 	ellipse(276,343,20,20);
@@ -38,7 +38,7 @@ function draw() {
     	rect(155,120,100,25);
     	fill(255);
     	strokeWeight(0);
-		text('Grow Lights', 205,137);
+		text(' Grow Lights ➤ ', 205,137);
 		fill('#F4851F');
 		strokeWeight(1.5);
   	}
