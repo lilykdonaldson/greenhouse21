@@ -1,5 +1,6 @@
 let img;
 let popupMode = false;
+let pos = 25;
 function preload() {
   img = loadImage('assets/graphic.png');
 }
@@ -11,7 +12,7 @@ function setup() {
 	// }
 	// else{
 		//img.resize(1000, 0);
-		createCanvas(1200, img.height*1.1);
+	createCanvas(1200, img.height*1.1);
 	//}
 	//console.log(img.width);
 }
@@ -117,10 +118,16 @@ function draw() {
   		strokeWeight(0);
   		rect(0,0,1200,img.height*1.1);
   		fill(0);
-  		var testrect = rect(300,windowHeight-(img.height*1.1),600,windowWidth);
-  		testrect.position(0, 0, 'fixed');
+  		if(pos<25){
+  			pos=25;
+  		}
+  		else if(pos>(img.height*1.1)-600){
+  			pos = (img.height*1.1)-600;
+  		}
+  		rect(300,pos,600,550);
 
   	}
+
 }
 function mousePressed() {
 	//Grow Lights Hit Point
@@ -152,4 +159,12 @@ function mousePressed() {
   	if (mouseX>515&&mouseX<(515+170)&&mouseY>1100&&mouseY<(1100+40)) {
   		window.open("https://www.google.com", '_blank');
   	}
+}
+
+function mouseWheel(event) {
+  //print(event.delta);
+  //move the square according to the vertical scroll amount
+  pos += event.delta;
+  //uncomment to block page scrolling
+  //return false;
 }
