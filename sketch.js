@@ -118,36 +118,53 @@ function draw() {
   		fill('rgba(10,10,10, 0.5)');
   		strokeWeight(0);
   		rect(0,0,1200,img.height*1.1);
-  		fill(255);
   		if(pos<25){
   			pos=25;
   		}
   		else if(pos>(img.height*1.1)-600){
   			pos = (img.height*1.1)-600;
   		}
-  		rect(300,pos,600,550);
+  		textAlign(LEFT);
+  		if(whoClicked=="lights"){
+  			fill(255);
+  			rect(300,pos,600,470);
+  			fill(0);
+  			let s = "   New innovations in lighting technology have made LEDs (Light Emitting Diodes) customizable, affordable, and energy-efficient. LED grow lights can be customized to provide certain types of light that can provide different outcomes for crops. For instance, changing the color used by the grow light can create crops that are shorter or taller, have smaller or larger leaves, have different fruiting outcomes, and more.\n   Lighting technology can also be used for pest management using Ultraviolet (UV) lights to kill pests and pathogens. One of the major advantages of pest management with UV radiation is that while pathogens have quickly developed resistance to pesticides, they do not seem to develop resistance to UV, or at least not at the same quick rate. Another major advantage is that while pesticides leave undesirable residue on food, UV treatment does not.";
+			text(s, 325,pos+35, 550, 470);
+  		}
+  		else if(whoClicked=="sensors"){
+  			fill(255);
+  			rect(300,pos,600,430);
+  			fill(0);
+  			let s = "    The Internet has become so prolific, and computer chips have become so inexpensive, it seems like everything nowadays is an internet-enabled device! What do you think of when you think about internet-enabled devices? Traditionally, you might first think of your computer and your phone, but with the rise of the ‘Internet of Things’ (IoT), it’s not just our personal devices that are connected to the internet, but also our ‘things,’ like our thermostats, our doorbells, our lightbulbs, and sometimes even our refrigerators. In the greenhouse, it pays to be connected. Having humidity, temperature, camera, and other advanced sensors can help you monitor your greenhouse in a more effective manner.\n   You'll need a 'data dashboard' to monitor the data your sensors output.";
+  			text(s, 325,pos+35, 550, 430);
+  		}
+  		else if(whoClicked=="data"){
+  			fill(255);
+  			rect(300,pos,600,615);
+  			fill(0);
+  			let s = "   Once you set up sensors in your greenhouse, those sensors are going to start generating data. This data is valuable, and can help monitor your greenhouse in real time, and spot trends over time that you can then use to make your business better, but your data can only work for you if you know how to work with it. When data becomes too large for you to handle using traditional data analytics (like spreadsheets), we call that ‘Big Data.’ Big Data needs special analytics to be processed. One common big data analytic is ‘Artificial Intelligence.’ Artificial Intelligence, or AI, uses advanced computing to accomplish tasks that might be too time-consuming or arduous for a human to do. When handling your data, especially if you’re using artificial intelligence, you’ll need a lot of computing power. If you need big, powerful computers but don’t want to manage them onsite, you can use ‘Cloud Computing.’ In Cloud Computing centers, engineers manage tons of computers that you can pay to connect to and use, so that you don’t have to manage the maintenance of those computers yourself. The information and algorithms you store with Cloud Computing platforms, like Amazon Web Services (AWS) or Microsoft Azure, is often said to be in ‘The Cloud.’";
+  			text(s, 325,pos+35, 550, 600);
+  		}
+  		else if(whoClicked=="community"){
+  			fill(255);
+  			rect(300,pos,600,315);
+  			fill(0);
+  			let s = "   Where people live, work, and play affects their health. The environment where a person lives impacts their health. The physical environment influences a person’s daily choices. Policies and the environment can affect what we eat and how we move, which in turn affects our health. Communities that lack full-service grocery stores and neighborhood food markets have less access to fresh fruits and vegetables. Greenhouses and other Controlled Agriculture Environments can provide communities with affordable, local, and nutritious produce.";
+  			text(s, 325,pos+35, 550, 300);
+  		}
+  		else if(whoClicked=="business"){
+  			fill(255);
+  			rect(300,pos,600,140);
+  			fill(0);
+  			let s = "A Controlled Environment Agriculture (CEA) or Greenhouse organization can be a profitable business, an impactful not-for-profit, or a B Corporation that balances both benefits!";
+  			text(s, 325,pos+35, 550, 140);
+  		}
   		fill(0);
   		ellipse(875,pos+20,25,25);
   		fill('red');
-  		text('X',875,pos+27);
+  		text('X',868.5,pos+27);
   		fill(0);
-  		textAlign(LEFT);
-  		if(whoClicked=="lights"){
-			let s = '    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat eros ut elit ultrices finibus. Fusce sagittis mi vitae enim interdum pharetra. Fusce maximus, dui quis tincidunt sagittis, massa est tincidunt mauris, et tempus leo ipsum nec sem. In non nisl consequat, lobortis magna eu, accumsan augue. Pellentesque tincidunt enim sit amet ipsum suscipit, in porta turpis commodo. Curabitur aliquam purus turpis, vel imperdiet augue luctus at. Duis ut semper sapien, et placerat sem. Aliquam posuere sem at sagittis dignissim. Donec vitae pulvinar neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper neque viverra sagittis rhoncus. Aenean rutrum lorem vel nulla molestie aliquam.\n   Donec venenatis, leo ut mattis ornare, justo magna tempor velit, vitae rutrum turpis arcu in ipsum. Duis ultricies rhoncus eleifend. Ut imperdiet finibus sapien interdum cursus. Etiam dui lectus, cursus eu quam sit amet, dictum gravida tellus. Phasellus nec tellus a neque venenatis imperdiet. Nullam eget augue dolor. Aenean in purus id tortor efficitur.';
-			text(s, 325,pos+35, 550, 525);
-  		}
-  		else if(whoClicked=="sensors"){
-
-  		}
-  		else if(whoClicked=="data"){
-  			
-  		}
-  		else if(whoClicked=="community"){
-  			
-  		}
-  		else if(whoClicked=="business"){
-  			
-  		}
   	}
 
 }
@@ -184,7 +201,7 @@ function mousePressed() {
     	whoClicked = "business";
   	}
   	if (mouseX>515&&mouseX<(515+170)&&mouseY>1100&&mouseY<(1100+40)) {
-  		window.open("https://www.google.com", '_blank');
+  		window.open("https://github.com/lilykdonaldson/greenhouse21/raw/main/whitepaper/Greenhouse21.pdf", '_blank');
   	}
   	if(popupMode){
   		d = dist(mouseX, mouseY,875,pos+20);
